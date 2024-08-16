@@ -1,0 +1,6 @@
+/.idea/
+/.idx/
+/.vscode/
+/dist/
+/build/
+/node_modules/

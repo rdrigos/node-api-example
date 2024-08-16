@@ -7,7 +7,7 @@
     "build": "tsup ./src/index.ts --out-dir ./build",
     "dev": "tsx watch --env-file=.env ./src/index.ts",
     "prettier": "npx prettier --write .",
-    "start": "tsx --env-file=.env ./dist/index.js"
+    "start": "tsx --env-file=.env ./build/index.js"
   },
   "keywords": [
     "typescript",

@@ -4,6 +4,9 @@ networks:
   app-network:
     driver: bridge
 
+volumes:
+  prometheus_data:
+
 services:
   application:
     container_name: api
@@ -14,3 +17,24 @@ services:
       - '3333:3333'
     networks:
       - app-network
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v3.4.1
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - app-network
+    ports:
+      - 9090:9090
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:12.0.2
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+    depends_on:
+      - prometheus

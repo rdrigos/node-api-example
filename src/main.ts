@@ -7,6 +7,7 @@ import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
 import Fastify from 'fastify';
+import metrics from 'fastify-metrics';
 
 // Creates the server instance
 const app = Fastify({
@@ -30,6 +31,7 @@ app.register(cors, corsConfig);
 
 // Sets up the application routers
 app.register(publicRouter, { prefix: '/' });
+app.register(metrics, { prefix: '/metrics' });
 
 // Starts the HTTP server
 app.listen({ host: env.HOST, port: env.PORT });

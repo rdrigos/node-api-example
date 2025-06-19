@@ -1,9 +1,7 @@
-import { ApiStatus } from '@/utils/enums/api-status.enum';
-import { StatusCode } from '@/utils/enums/status-code.enum';
+import { ServiceStatus } from '@/enums/status-service.enum';
 
 export interface ResponseDTO<T> {
-  code: StatusCode;
-  status: ApiStatus;
+  status: ServiceStatus;
   messages: string[];
   payload: T;
 }

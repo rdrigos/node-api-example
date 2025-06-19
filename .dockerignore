@@ -1,0 +1,10 @@
+node_modules
+dist
+Dockerfile
+.dockerignore
+.editorconfig
+.git
+.gitattributes
+.gitignore
+.prettierignore
+.prettierrc.json

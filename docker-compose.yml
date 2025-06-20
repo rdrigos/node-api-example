@@ -9,7 +9,7 @@ volumes:
 
 services:
   application:
-    container_name: api
+    container_name: application
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,16 +24,19 @@ services:
     volumes:
       - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
+    ports:
+      - '9090:9090'
     networks:
       - app-network
-    ports:
-      - 9090:9090
 
   grafana:
     container_name: grafana
     image: grafana/grafana:12.0.2
+    volumes:
+      - ./config/grafana/provisioning:/etc/grafana/provisioning
+      - ./config/grafana/dashboards:/var/lib/grafana/dashboards
     ports:
-      - 3000:3000
+      - '3000:3000'
     networks:
       - app-network
     depends_on:

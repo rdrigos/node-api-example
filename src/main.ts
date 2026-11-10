@@ -1,8 +1,8 @@
+import { env } from '@/config/environment';
 import { publicRouter } from '@/http/routers/public.router';
 import { corsConfig } from '@/infrastructure/config/cors.config';
 import { helmetConfig } from '@/infrastructure/config/helmet.config';
 import { rateLimitConfig } from '@/infrastructure/config/rate-limit.config';
-import { env } from '@/infrastructure/environment';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';

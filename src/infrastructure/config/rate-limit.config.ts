@@ -1,4 +1,4 @@
-import { FastifyRateLimitOptions } from '@fastify/rate-limit';
+import type { FastifyRateLimitOptions } from '@fastify/rate-limit';
 
 export const rateLimitConfig: FastifyRateLimitOptions = {
   global: true,

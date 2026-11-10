@@ -1,4 +1,4 @@
-import { FastifyHelmetOptions } from '@fastify/helmet';
+import type { FastifyHelmetOptions } from '@fastify/helmet';
 
 export const helmetConfig: FastifyHelmetOptions = {
   contentSecurityPolicy: true,

@@ -1,11 +1,7 @@
-# Handle line endings automatically for files detected as text
-# and leave all files detected as binary untouched.
+# Disables automatic detection of text files
 * text=false
 
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert crlf => lf)
+# Source code
 *.css             eol=lf
 *.df              eol=lf
 *.htm             eol=lf
@@ -16,23 +12,26 @@
 *.jsp             eol=lf
 *.jspf            eol=lf
 *.jspx            eol=lf
+*.jsx             eol=lf
+*.mjs             eol=lf
 *.properties      eol=lf
 *.sh              eol=lf
+*.sql             eol=lf
 *.tld             eol=lf
 *.ts              eol=lf
+*.tsx             eol=lf
 *.txt             eol=lf
 *.tag             eol=lf
 *.tagx            eol=lf
 *.xml             eol=lf
+*.yaml            eol=lf
 *.yml             eol=lf
 
+# Repository configuration files
 .gitignore        eol=lf
 .gitattributes    eol=lf
-.eslintignore     eol=lf
-.prettierignore   eol=lf
 
-# These files are binary and should be left untouched
-# (binary is a macro for -text -diff)
+# Binary files
 *.class           binary
 *.dll             binary
 *.ear             binary
